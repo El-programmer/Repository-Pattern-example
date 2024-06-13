@@ -33,6 +33,3 @@ Email: admin@admin.com
 Phone: 01201791523
 Password: 123456
 
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
