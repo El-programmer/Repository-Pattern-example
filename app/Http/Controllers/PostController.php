@@ -30,7 +30,9 @@ class PostController extends Controller
 
     public function store(PostRequest $request)
     {
-        Post::create($request->validated());
+        $inputs = $request->validated();
+        $inputs['user_id'] = auth()->id();
+        Post::create($inputs);
         return redirect()->route('posts.index');
     }
 
@@ -46,8 +48,9 @@ class PostController extends Controller
 
     public function update(PostRequest $request, Post $post)
     {
-        $post->update($request->validated());
-
+        $inputs = $request->validated();
+        $inputs['user_id'] = auth()->id();
+        $post->update($inputs);
         return redirect()->route('posts.index');
     }
 

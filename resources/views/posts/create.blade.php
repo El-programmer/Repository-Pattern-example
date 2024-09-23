@@ -6,12 +6,24 @@
     </div>
     <form action="{{ route('posts.store') }}" method="POST">
         @csrf
-        <div class="form-group">
-            <label for="name">Title</label>
-            <input type="text" name="title" class="form-control" required>
-            @error('title')
-            <div class="text-danger">{{ $message }}</div>
-            @enderror
+        <div class="row row-cols-md-2">
+            <div class="form-group">
+                <label for="name">Title</label>
+                <input type="text" name="title" class="form-control" required>
+                @error('title')
+                <div class="text-danger">{{ $message }}</div>
+                @enderror
+            </div>
+            <div class="form-group">
+                <label for="name">Status</label>
+                <select class="form-control" name="status">
+                    <option value="1">Active</option>
+                    <option value="0">unActive</option>
+                </select>
+                @error('status')
+                <div class="text-danger">{{ $message }}</div>
+                @enderror
+            </div>
         </div>
         <div class="form-group">
             <label for="content">content</label>

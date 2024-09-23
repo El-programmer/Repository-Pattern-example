@@ -21,7 +21,7 @@ class Post extends Model
         $keyword = request()->search['value'] ?? null;
         $q->when(\request("user_id"), function (Builder $query) {
             $query->where("user_id", \request("user_id"));
-        })->when(\request("user_id"), function (Builder $query) use ($keyword) {
+        })->when($keyword, function (Builder $query) use ($keyword) {
             $query->where('title', 'LIKE', "%{$keyword}%");
         });
     }
