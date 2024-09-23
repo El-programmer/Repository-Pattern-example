@@ -4,6 +4,7 @@ namespace App\Repositories;
 interface BaseRepositoryInterface
 {
     public function all();
+    public function pages();
 
     public function create(array $data);
 

@@ -5,7 +5,7 @@ use App\Models\Department;
 use App\Models\Task;
 use App\Models\User;
 
-class TaskRepository implements BaseRepositoryInterface
+class PostRepository implements BaseRepositoryInterface
 {
     public $model = Task::class;
     public function all($with = [])

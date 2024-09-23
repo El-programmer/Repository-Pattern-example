@@ -2,13 +2,13 @@
 
 namespace App\Services;
 
-use App\Repositories\TaskRepository;
+use App\Repositories\PostRepository;
 use App\Repositories\UserRepository;
 
-class TaskService
+class PostService
 {
     public function __construct(
-        protected TaskRepository $taskRepository,
+        protected PostRepository $postRepository,
         protected UserRepository $userRepository,
     ) {
     }
